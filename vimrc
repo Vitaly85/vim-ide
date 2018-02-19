@@ -16,11 +16,11 @@ set modelines=0
 
 " ========================================================================================
 "TAB settings.
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
-set showtabline=2
+set showtabline=4
 set ruler
 
 " ========================================================================================
@@ -114,7 +114,7 @@ set formatoptions=qrn1
 " ========================================================================================
 " To  show special characters in Vim
 "set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<,space:␣
 
 " ========================================================================================
 " set unnamed clipboard
@@ -215,7 +215,7 @@ if has("gui_running")
     set guioptions+=a
     set guioptions-=m
     colo badwolf
-    set listchars=tab:▸\ ,eol:¬         " Invisibles using the Textmate style
+    set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<,space:␣
 else
     set t_Co=256
     colorschem badwolf
@@ -383,11 +383,10 @@ let g:miniBufExplModSelTarget = 1
 command! Sudowrite w !sudo tee % > /dev/null
 
 "==========================================================================="
-" TAB and Shift-TAB in normal mode cycle buffers
+" Alt+Left and Alt+Right in normal mode cycle buffer
 "
-nmap <Tab> :bn<CR>
-nmap <S-Tab> :bp<CR> 
-
+nmap <M-Right> :bn<CR>
+nmap <M-Left> :bp<CR>
 
 "==========================================================================="
 " highlight current line
